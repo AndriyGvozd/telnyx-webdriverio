@@ -1,1 +1,0 @@
-stale element reference: WebDriverError: The element with the reference 0cd29103-c750-4dd6-9090-21c1f91c12bb is stale; either its node document is not the active document, or it is no longer connected to the DOM when running "element/0cd29103-c750-4dd6-9090-21c1f91c12bb/click" with method "POST"
