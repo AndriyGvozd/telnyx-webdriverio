@@ -1,205 +1,207 @@
 # Telnyx.WebdriverIO
 
-Автоматизовані E2E-тести для [telnyx.com](https://telnyx.com), написані на **WebdriverIO** + **TypeScript** з використанням патерну **Page Object Model**.
+📊 **[Live Allure report](https://andriygvozd.github.io/telnyx-webdriverio/)** — latest CI run results.
 
-30 тесткейсів (`TC-1`…`TC-30`), що покривають хедер, футер, hero-секцію, композицію продуктів, runtime-секцію, порівняльну таблицю, калькулятор вартості, build-секцію та мобільну навігацію.
+Automated E2E tests for [telnyx.com](https://telnyx.com), written with **WebdriverIO** + **TypeScript** using the **Page Object Model** pattern.
+
+30 test cases (`TC-1`…`TC-30`) covering the header, footer, hero section, product composition, runtime section, competitor comparison table, pricing calculator, build section and mobile navigation.
 
 ---
 
-## Зміст
+## Table of contents
 
-- [Структура проєкту](#структура-проєкту)
-- [Встановлення](#встановлення)
-- [Запуск тестів локально](#запуск-тестів-локально)
-- [Крос-браузерність](#крос-браузерність)
-- [Крос-середовищність (TEST_ENV)](#крос-середовищність-test_env)
-- [Allure-звіт](#allure-звіт)
+- [Project structure](#project-structure)
+- [Installation](#installation)
+- [Running tests locally](#running-tests-locally)
+- [Cross-browser support](#cross-browser-support)
+- [Cross-environment support (TEST_ENV)](#cross-environment-support-test_env)
+- [Allure report](#allure-report)
 - [Docker](#docker)
 - [CI/CD (GitHub Actions + GitHub Pages)](#cicd-github-actions--github-pages)
-- [Ретраї та стабільність](#ретраї-та-стабільність)
-- [Відомі обмеження](#відомі-обмеження)
+- [Retries and stability](#retries-and-stability)
+- [Known limitations](#known-limitations)
 
 ---
 
-## Структура проєкту
+## Project structure
 
 ```
-├── config/                        # Конфіги WebdriverIO
-│   ├── wdio.shared.conf.ts        # Базові налаштування (env, allure, ретраї)
-│   ├── wdio.desktop.shared.conf.ts# Спільне для desktop-браузерів (specs, viewport)
+├── config/                        # WebdriverIO configs
+│   ├── wdio.shared.conf.ts        # Base settings (env, allure, retries)
+│   ├── wdio.desktop.shared.conf.ts# Shared across desktop browsers (specs, viewport)
 │   ├── wdio.chrome.conf.ts
 │   ├── wdio.firefox.conf.ts
 │   ├── wdio.safari.conf.ts
-│   └── wdio.mobile.conf.ts        # мобільна емуляція (375x812) через Chrome
+│   └── wdio.mobile.conf.ts        # Mobile emulation (375x812) via Chrome
 │
 ├── test/
 │   ├── env/
 │   │   └── environments.ts        # prod / staging / dev
 │   ├── pageobjects/
-│   │   ├── page.ts                # базовий Page-клас
-│   │   ├── home.page.ts           # головна сторінка (hero, composition, runtime...)
+│   │   ├── page.ts                # Base Page class
+│   │   ├── home.page.ts           # Homepage (hero, composition, runtime...)
 │   │   └── components/
 │   │       ├── header.component.ts
 │   │       └── footer.component.ts
 │   ├── specs/
-│   │   ├── desktop/                # 9 спек-файлів, TC-1..TC-9, TC-11..TC-29
+│   │   ├── desktop/                # 9 spec files, TC-1..TC-9, TC-11..TC-29
 │   │   └── mobile/                 # TC-10, TC-30
 │   └── support/
 │       ├── elementUtils.ts        # firstDisplayed / jsClick / getFullText
-│       └── consoleLogs.ts         # фільтрація SEVERE-помилок консолі
+│       └── consoleLogs.ts         # Filters out SEVERE console errors
 │
-├── .github/workflows/ci.yml       # CI-пайплайн + деплой на GitHub Pages
-├── Dockerfile                     # образ для контейнера з тестами
-├── docker-compose.yml             # оркестрація Selenium-контейнерів
+├── .github/workflows/ci.yml       # CI pipeline + GitHub Pages deployment
+├── Dockerfile                     # Image for the test runner container
+├── docker-compose.yml             # Orchestrates the Selenium containers
 ├── package.json
 └── tsconfig.json
 ```
 
 ---
 
-## Встановлення
+## Installation
 
 ```bash
 npm install
 ```
 
-Потрібен **Node.js 20+**.
+Requires **Node.js 20+**.
 
 ---
 
-## Запуск тестів локально
+## Running tests locally
 
-Для локального запуску WebdriverIO сам керує браузером (запускає Chrome/Firefox/Safari на твоїй машині) — Docker для цього не обов'язковий.
+For a local run, WebdriverIO manages the browser itself (launches Chrome/Firefox/Safari on your machine) — Docker isn't required for this.
 
 ```bash
-npm run test:chrome      # весь desktop-набір на Chrome
-npm run test:firefox     # весь desktop-набір на Firefox
-npm run test:safari      # весь desktop-набір на Safari (лише macOS)
-npm run test:mobile      # мобільний набір (TC-10, TC-30)
+npm run test:chrome      # full desktop suite on Chrome
+npm run test:firefox     # full desktop suite on Firefox
+npm run test:safari      # full desktop suite on Safari (macOS only)
+npm run test:mobile      # mobile suite (TC-10, TC-30)
 
-npm test                 # усі браузери послідовно (chrome → firefox → safari → mobile)
+npm test                 # all browsers in sequence (chrome → firefox → safari → mobile)
 ```
 
-**Запустити один конкретний файл:**
+**Run a single file:**
 ```bash
 npm run test:file -- ./test/specs/desktop/header.e2e.ts
 ```
 
-**Запустити один конкретний тест за номером (наприклад, лише TC-23):**
+**Run a single test by number (e.g. only TC-23):**
 ```bash
 npx wdio run ./config/wdio.chrome.conf.ts --spec ./test/specs/desktop/economics.e2e.ts --mochaOpts.grep "TC-23"
 ```
 
-> `npm test` не зупиняється на першому падінні — навіть якщо Chrome-набір впаде, Firefox/Safari/Mobile все одно запустяться, а фінальний код виходу коректно відобразить, чи було хоч одне падіння.
+> `npm test` doesn't stop on the first failure — even if the Chrome suite fails, Firefox/Safari/Mobile still run, and the final exit code correctly reflects whether anything failed.
 
 ---
 
-## Крос-браузерність
+## Cross-browser support
 
-Кожен браузер має власний конфіг у `config/`, що успадковує спільні налаштування (base URL, репортери, ретраї) з `wdio.shared.conf.ts`. Додавання нового браузера — це один новий файл, а не дублювання всього конфігу.
+Each browser has its own config file in `config/`, inheriting shared settings (base URL, reporters, retries) from `wdio.shared.conf.ts`. Adding a new browser means one new file, not duplicating the whole config.
 
-| Браузер | Команда | Примітка |
+| Browser | Command | Note |
 |---|---|---|
-| Chrome | `npm run test:chrome` | основний |
+| Chrome | `npm run test:chrome` | primary |
 | Firefox | `npm run test:firefox` | |
-| Safari | `npm run test:safari` | лише macOS, вимагає одноразового `safaridriver --enable` |
-| Mobile | `npm run test:mobile` | Chrome + мобільна емуляція 375×812 |
+| Safari | `npm run test:safari` | macOS only, needs a one-time `safaridriver --enable` |
+| Mobile | `npm run test:mobile` | Chrome + 375×812 mobile emulation |
 
 ---
 
-## Крос-середовищність (TEST_ENV)
+## Cross-environment support (TEST_ENV)
 
-Базовий URL визначається змінною `TEST_ENV` (`prod` за замовчуванням):
+The base URL is controlled by the `TEST_ENV` variable (`prod` by default):
 
 ```bash
 TEST_ENV=staging npm run test:chrome
 TEST_ENV=dev npm run test:chrome
 ```
 
-Або через готові скрипти: `npm run test:chrome:staging`, `npm run test:chrome:dev` (і аналогічно для інших браузерів).
+Or via the ready-made scripts: `npm run test:chrome:staging`, `npm run test:chrome:dev` (and similarly for the other browsers).
 
-> `staging`/`dev` URL у [test/env/environments.ts](test/env/environments.ts) — заглушки (у Telnyx немає публічних non-prod середовищ). Механізм перемикання повністю робочий і перевірений; для реального проєкту достатньо замінити значення `baseUrl`.
+> The `staging`/`dev` URLs in [test/env/environments.ts](test/env/environments.ts) are placeholders (Telnyx has no public non-prod environments). The switching mechanism itself is fully functional and verified - for a real project, just swap in the real `baseUrl` values.
 
 ---
 
-## Allure-звіт
+## Allure report
 
 ```bash
-npm run report:clean       # прибрати старі результати/звіт
-npm run report:generate    # згенерувати HTML-звіт з allure-results/
-npm run report:open        # відкрити згенерований звіт у браузері
-npm run report             # generate + open за один виклик
+npm run report:clean       # remove old results/report
+npm run report:generate    # generate the HTML report from allure-results/
+npm run report:open        # open the generated report in a browser
+npm run report             # generate + open in one call
 ```
 
-Результати накопичуються між прогонами навмисно — щоб, наприклад, послідовні `test:chrome` + `test:firefox` склались в один спільний звіт. Виклич `report:clean` перед новим "чистим" прогоном.
+Results accumulate across runs on purpose - so, for example, consecutive `test:chrome` + `test:firefox` runs combine into one shared report. Call `report:clean` before a fresh run.
 
 ---
 
 ## Docker
 
-Тести можна запускати повністю в контейнерах — браузери не потрібно встановлювати на хост-машину взагалі. Використовуються офіційні образи `selenium/standalone-chrome/firefox`, а сам проєкт підключається до них як звичайний WebDriver-клієнт.
+Tests can run entirely in containers - no need to install any browser on the host machine at all. Official `selenium/standalone-chrome/firefox` images are used, and the project connects to them as a regular WebDriver client.
 
-**Передумова:** встановлений і запущений [Docker Desktop](https://www.docker.com/products/docker-desktop/).
+**Prerequisite:** [Docker Desktop](https://www.docker.com/products/docker-desktop/) installed and running.
 
 ```bash
 npm run docker:test:chrome
 npm run docker:test:firefox
 npm run docker:test:mobile
-npm run docker:down           # прибрати контейнери після роботи
+npm run docker:down           # tear down containers when done
 ```
 
-Результати (`allure-results/`) монтуються з контейнера напряму на диск — після прогону `npm run report` працює так само, як і без Docker.
+Results (`allure-results/`) are mounted straight from the container onto disk - after the run, `npm run report` works exactly the same as without Docker.
 
-### Як це влаштовано
+### How it works
 
 ```
 docker compose run tests npm run test:chrome
         │
         ▼
-контейнер "tests" (Node.js + код проєкту)
-        │  WebDriver-запити на http://selenium-chrome:4444
+"tests" container (Node.js + project code)
+        │  WebDriver requests to http://selenium-chrome:4444
         ▼
-контейнер "selenium-chrome" (справжній Chrome + chromedriver)
+"selenium-chrome" container (real Chrome + chromedriver)
         │
         ▼
-відкриває реальний telnyx.com через інтернет
+opens the real telnyx.com over the internet
 ```
 
-**Safari в Docker не входить** — Safari не має Linux-збірки в принципі, і ліцензія Apple дозволяє запускати macOS/Safari лише на реальному Apple-обладнанні. Це не обмеження цього проєкту, а фундаментальне обмеження платформи.
+**Safari isn't part of Docker** - Safari has no Linux build at all, and Apple's license only allows macOS/Safari to run on real Apple hardware. This isn't a limitation of this project, but a fundamental platform constraint.
 
 ---
 
 ## CI/CD (GitHub Actions + GitHub Pages)
 
-Пайплайн — [.github/workflows/ci.yml](.github/workflows/ci.yml), запускається автоматично на push у `main` (і вручну через "Run workflow").
+Pipeline: [.github/workflows/ci.yml](.github/workflows/ci.yml), triggered automatically on push to `main` (and manually via "Run workflow").
 
-**Джоби:**
-1. **`docker-tests`** (матриця Chrome/Firefox) — збирає Docker-образ і ганяє тести в контейнерах на звичайному Ubuntu-раннері.
-2. **`mobile-tests`** — той самий підхід для мобільного набору.
-3. **`safari-tests`** — окремо, на `macos-latest` раннері, **без Docker** (нативний запуск, бо Safari в контейнері неможливий).
-4. **`deploy-report`** — збирає результати з усіх джобів (навіть якщо якийсь впав), генерує єдиний Allure-звіт і публікує його на **GitHub Pages**.
+**Jobs:**
+1. **`docker-tests`** (Chrome/Firefox matrix) - builds the Docker image and runs tests in containers on a regular Ubuntu runner.
+2. **`mobile-tests`** - the same approach for the mobile suite.
+3. **`safari-tests`** - separately, on a `macos-latest` runner, **without Docker** (native run, since Safari can't run in a container).
+4. **`deploy-report`** - collects results from every job (even if one failed), generates a single combined Allure report and publishes it to **GitHub Pages**.
 
-Готовий звіт з останнього прогону буде доступний за адресою:
+The latest report is always available at:
 ```
-https://<твій-github-username>.github.io/<назва-репозиторію>/
+https://<your-github-username>.github.io/<repo-name>/
 ```
 
-### Одноразове налаштування GitHub Pages
-У Settings репозиторію → Pages → Source: обери гілку `gh-pages` (її створює перший успішний прогін пайплайна) → Save.
+### One-time GitHub Pages setup
+In the repo's Settings → Pages → Source: pick the `gh-pages` branch (created by the first successful pipeline run) → Save.
 
 ---
 
-## Ретраї та стабільність
+## Retries and stability
 
-Тести ганяються проти **реального живого сайту** telnyx.com через інтернет, тож окремі мережеві затримки чи повільна відповідь сторонніх скриптів (аналітика, Facebook-піксель тощо) — це нормальна, очікувана флейкі-поведінка, а не баг тестів.
+Tests run against the **real, live** telnyx.com site over the internet, so occasional network delays or a slow-responding third-party script (analytics, the Facebook pixel, etc.) are normal, expected flakiness - not a bug in the tests.
 
-- **Автоматичні ретраї**: кожен тест, що впав, перезапускається до 3 разів (`mochaOpts.retries: 3` у `config/wdio.shared.conf.ts`), перш ніж бути позначеним як реально `failing`.
-- **`pageLoadStrategy: 'eager'`** (Chrome/Firefox) — команди навігації не блокуються "вічним" завантаженням стороннього віджета, який ніколи не викликає власну подію `load`.
-- Консольні попередження (WARNING) від сторонніх скриптів сайту (cookielaw.org, googletagmanager, bugsnag тощо) **не** призводять до падіння тестів — фільтруються в [test/support/consoleLogs.ts](test/support/consoleLogs.ts); падіння викликають лише `SEVERE`-помилки самого сайту.
+- **Automatic retries**: a failing test is re-run up to 3 times (`mochaOpts.retries: 3` in `config/wdio.shared.conf.ts`) before being marked as truly `failing`.
+- **`pageLoadStrategy: 'eager'`** (Chrome/Firefox) - navigation commands aren't blocked on a third-party embed that hangs forever and never fires its own `load` event.
+- Console `WARNING`s from the site's own third-party scripts (cookielaw.org, googletagmanager, bugsnag, etc.) do **not** fail tests - they're filtered out in [test/support/consoleLogs.ts](test/support/consoleLogs.ts); only the site's own `SEVERE` errors cause a failure.
 
 ---
 
-## Відомі обмеження
+## Known limitations
 
-- **Safari** не можна запустити в Docker — лише нативно на macOS (локально чи на `macos-latest` GitHub-раннері).
-- `staging`/`dev` середовища в `test/env/environments.ts` — технічно робочі, але вказують на URL-заглушки, оскільки в Telnyx немає публічних non-prod оточень.
+- **Safari** can't run in Docker - only natively on macOS (locally, or on a `macos-latest` GitHub runner).
+- The `staging`/`dev` environments in `test/env/environments.ts` are technically functional but point to placeholder URLs, since Telnyx has no public non-prod environments.
