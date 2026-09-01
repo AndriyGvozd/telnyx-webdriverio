@@ -1,4 +1,0 @@
-{
-  "using": "xpath",
-  "value": ".//a[contains(., \"Healthcare\") and not(.//a)]"
-}

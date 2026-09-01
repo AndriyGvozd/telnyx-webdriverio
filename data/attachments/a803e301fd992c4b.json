@@ -1,4 +1,0 @@
-{
-  "using": "xpath",
-  "value": ".//a[contains(., \"SMS API\") and not(.//a)]"
-}
