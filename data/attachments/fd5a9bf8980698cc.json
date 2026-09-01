@@ -1,4 +1,0 @@
-{
-  "using": "xpath",
-  "value": ".//a[normalize-space(text()) = \"GET STARTED\"] | .//a[not(.//a[normalize-space(text()) = \"GET STARTED\"]) and normalize-space() = \"GET STARTED\"]"
-}

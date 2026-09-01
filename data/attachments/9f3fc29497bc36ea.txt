@@ -1,1 +1,0 @@
-stale element reference: WebDriverError: A node reference could not be resolved: Node with identifier 'node-27433988-6592-470E-A59C-F217BA82CE2D' was not found when running "http://localhost:49241/session/C7D5B1A8-3F44-4337-B5D9-26932F467B0B/element/node-27433988-6592-470E-A59C-F217BA82CE2D/click" with method "POST"
