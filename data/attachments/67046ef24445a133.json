@@ -1,0 +1,4 @@
+{
+  "using": "xpath",
+  "value": "//dt[normalize-space(text())=\"Per conversation, all-in\"]/following-sibling::dd"
+}

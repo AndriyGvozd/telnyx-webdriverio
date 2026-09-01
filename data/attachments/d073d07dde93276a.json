@@ -1,0 +1,146 @@
+[
+  {
+    "level": "SEVERE",
+    "message": "https://cdn.cookielaw.org/scripttemplates/202605.1.0/otBannerSdk.js 6:558998 Uncaught TypeError: Cannot read properties of undefined (reading 'TenantFeatures')",
+    "source": "javascript",
+    "timestamp": 1788305001958
+  },
+  {
+    "level": "SEVERE",
+    "message": "https://cdn.cookielaw.org/scripttemplates/202605.1.0/otBannerSdk.js 6:558998 Uncaught TypeError: Cannot read properties of undefined (reading 'TenantFeatures')",
+    "source": "javascript",
+    "timestamp": 1788305006999
+  },
+  {
+    "level": "WARNING",
+    "message": "https://dila2qpfw3s64.cloudfront.net/_next/static/chunks/2no8iagyl3ao9.js?dpl=cc3be86 10:281325 \"[Prism] Unload flush capped to 19/20 events to fit keepalive budget; 1 trailing events deferred (restored to buffer if page stays alive, lost on actual unload pending Tranche 2 SDK persistence)\"",
+    "source": "console-api",
+    "timestamp": 1788305009544
+  },
+  {
+    "level": "SEVERE",
+    "message": "https://cdn.cookielaw.org/scripttemplates/202605.1.0/otBannerSdk.js 6:558998 Uncaught TypeError: Cannot read properties of undefined (reading 'TenantFeatures')",
+    "source": "javascript",
+    "timestamp": 1788305010929
+  },
+  {
+    "level": "WARNING",
+    "message": "https://dila2qpfw3s64.cloudfront.net/_next/static/chunks/2no8iagyl3ao9.js?dpl=cc3be86 10:281325 \"[Prism] Unload flush capped to 16/50 events to fit keepalive budget; 34 trailing events deferred (restored to buffer if page stays alive, lost on actual unload pending Tranche 2 SDK persistence)\"",
+    "source": "console-api",
+    "timestamp": 1788305011966
+  },
+  {
+    "level": "SEVERE",
+    "message": "https://cdn.cookielaw.org/scripttemplates/202605.1.0/otBannerSdk.js 6:558998 Uncaught TypeError: Cannot read properties of undefined (reading 'TenantFeatures')",
+    "source": "javascript",
+    "timestamp": 1788305013486
+  },
+  {
+    "level": "WARNING",
+    "message": "https://dila2qpfw3s64.cloudfront.net/_next/static/chunks/2no8iagyl3ao9.js?dpl=cc3be86 10:281325 \"[Prism] Unload flush capped to 17/61 events to fit keepalive budget; 44 trailing events deferred (restored to buffer if page stays alive, lost on actual unload pending Tranche 2 SDK persistence)\"",
+    "source": "console-api",
+    "timestamp": 1788305014711
+  },
+  {
+    "level": "SEVERE",
+    "message": "https://telnyx.com/sign-up - Access to script at 'https://dila2qpfw3s64.cloudfront.net/_next/static/chunks/2r6zvh297temc.js?dpl=cc3be86' from origin 'https://telnyx.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.",
+    "source": "javascript",
+    "timestamp": 1788305014984
+  },
+  {
+    "level": "SEVERE",
+    "message": "https://dila2qpfw3s64.cloudfront.net/_next/static/chunks/2r6zvh297temc.js?dpl=cc3be86 - Failed to load resource: net::ERR_FAILED",
+    "source": "network",
+    "timestamp": 1788305014985
+  },
+  {
+    "level": "SEVERE",
+    "message": "https://telnyx.com/sign-up - Access to script at 'https://dila2qpfw3s64.cloudfront.net/_next/static/chunks/0fa70ujwjfit2.js?dpl=cc3be86' from origin 'https://telnyx.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.",
+    "source": "javascript",
+    "timestamp": 1788305014987
+  },
+  {
+    "level": "SEVERE",
+    "message": "https://dila2qpfw3s64.cloudfront.net/_next/static/chunks/0fa70ujwjfit2.js?dpl=cc3be86 - Failed to load resource: net::ERR_FAILED",
+    "source": "network",
+    "timestamp": 1788305014987
+  },
+  {
+    "level": "SEVERE",
+    "message": "https://telnyx.com/sign-up - Access to script at 'https://dila2qpfw3s64.cloudfront.net/_next/static/chunks/3gtv9o61te61q.js?dpl=cc3be86' from origin 'https://telnyx.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.",
+    "source": "javascript",
+    "timestamp": 1788305014991
+  },
+  {
+    "level": "SEVERE",
+    "message": "https://dila2qpfw3s64.cloudfront.net/_next/static/chunks/3gtv9o61te61q.js?dpl=cc3be86 - Failed to load resource: net::ERR_FAILED",
+    "source": "network",
+    "timestamp": 1788305014991
+  },
+  {
+    "level": "SEVERE",
+    "message": "https://telnyx.com/sign-up - Access to script at 'https://dila2qpfw3s64.cloudfront.net/_next/static/chunks/3ksfrk_7wuoeb.js?dpl=cc3be86' from origin 'https://telnyx.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.",
+    "source": "javascript",
+    "timestamp": 1788305014992
+  },
+  {
+    "level": "SEVERE",
+    "message": "https://dila2qpfw3s64.cloudfront.net/_next/static/chunks/3ksfrk_7wuoeb.js?dpl=cc3be86 - Failed to load resource: net::ERR_FAILED",
+    "source": "network",
+    "timestamp": 1788305014993
+  },
+  {
+    "level": "SEVERE",
+    "message": "https://cdn.cookielaw.org/scripttemplates/202605.1.0/otBannerSdk.js 6:558998 Uncaught TypeError: Cannot read properties of undefined (reading 'TenantFeatures')",
+    "source": "javascript",
+    "timestamp": 1788305016729
+  },
+  {
+    "level": "WARNING",
+    "message": "https://dila2qpfw3s64.cloudfront.net/_next/static/chunks/2no8iagyl3ao9.js?dpl=cc3be86 10:281325 \"[Prism] Unload flush capped to 16/58 events to fit keepalive budget; 42 trailing events deferred (restored to buffer if page stays alive, lost on actual unload pending Tranche 2 SDK persistence)\"",
+    "source": "console-api",
+    "timestamp": 1788305017892
+  },
+  {
+    "level": "WARNING",
+    "message": "https://dila2qpfw3s64.cloudfront.net/_next/static/chunks/2no8iagyl3ao9.js?dpl=cc3be86 10:281325 \"[Prism] Unload flush capped to 41/77 events to fit keepalive budget; 36 trailing events deferred (restored to buffer if page stays alive, lost on actual unload pending Tranche 2 SDK persistence)\"",
+    "source": "console-api",
+    "timestamp": 1788305021239
+  },
+  {
+    "level": "SEVERE",
+    "message": "https://cdn.cookielaw.org/scripttemplates/202605.1.0/otBannerSdk.js 6:558998 Uncaught TypeError: Cannot read properties of undefined (reading 'TenantFeatures')",
+    "source": "javascript",
+    "timestamp": 1788305022908
+  },
+  {
+    "level": "WARNING",
+    "message": "https://dila2qpfw3s64.cloudfront.net/_next/static/chunks/2no8iagyl3ao9.js?dpl=cc3be86 10:281325 \"[Prism] Unload flush capped to 39/40 events to fit keepalive budget; 1 trailing events deferred (restored to buffer if page stays alive, lost on actual unload pending Tranche 2 SDK persistence)\"",
+    "source": "console-api",
+    "timestamp": 1788305025625
+  },
+  {
+    "level": "SEVERE",
+    "message": "https://cdn.cookielaw.org/scripttemplates/202605.1.0/otBannerSdk.js 6:558998 Uncaught TypeError: Cannot read properties of undefined (reading 'TenantFeatures')",
+    "source": "javascript",
+    "timestamp": 1788305027093
+  },
+  {
+    "level": "SEVERE",
+    "message": "https://telnyx.com/solutions?_rsc=RTqY04CYue_g8ILu - Failed to load resource: the server responded with a status of 404 ()",
+    "source": "network",
+    "timestamp": 1788305028918
+  },
+  {
+    "level": "WARNING",
+    "message": "https://dila2qpfw3s64.cloudfront.net/_next/static/chunks/2no8iagyl3ao9.js?dpl=cc3be86 10:281325 \"[Prism] Unload flush capped to 7/8 events to fit keepalive budget; 1 trailing events deferred (restored to buffer if page stays alive, lost on actual unload pending Tranche 2 SDK persistence)\"",
+    "source": "console-api",
+    "timestamp": 1788305029527
+  },
+  {
+    "level": "SEVERE",
+    "message": "https://cdn.cookielaw.org/scripttemplates/202605.1.0/otBannerSdk.js 6:558998 Uncaught TypeError: Cannot read properties of undefined (reading 'TenantFeatures')",
+    "source": "javascript",
+    "timestamp": 1788305031015
+  }
+]

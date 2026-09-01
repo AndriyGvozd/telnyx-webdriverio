@@ -1,0 +1,4 @@
+{
+  "using": "xpath",
+  "value": ".//a[contains(., \"Global Numbers\") and not(.//a)]"
+}

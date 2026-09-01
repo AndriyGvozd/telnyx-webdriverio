@@ -1,0 +1,4 @@
+{
+  "using": "xpath",
+  "value": "//dt[normalize-space(text())=\"Rented stack per month\"]/following-sibling::dd"
+}

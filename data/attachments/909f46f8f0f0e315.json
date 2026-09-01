@@ -1,0 +1,4 @@
+{
+  "using": "xpath",
+  "value": "//p[normalize-space(text())=\"OR SELECT PRODUCT\"]/following-sibling::*//button[@aria-pressed][.//span[normalize-space(text())=\"SMS API\"]]"
+}

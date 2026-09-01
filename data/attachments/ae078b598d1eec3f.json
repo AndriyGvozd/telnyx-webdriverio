@@ -1,0 +1,4 @@
+{
+  "using": "xpath",
+  "value": "//dt[normalize-space(text())=\"Est. latency budget\"]/following-sibling::dd"
+}

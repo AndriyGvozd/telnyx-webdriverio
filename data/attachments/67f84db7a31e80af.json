@@ -1,0 +1,4 @@
+{
+  "using": "xpath",
+  "value": "//span[normalize-space(text())=\"Contact center\"]/ancestor::button[@aria-pressed]"
+}

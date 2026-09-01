@@ -1,0 +1,4 @@
+{
+  "using": "xpath",
+  "value": "//dt[normalize-space(text())=\"Primitives composed\"]/following-sibling::dd"
+}

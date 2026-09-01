@@ -1,0 +1,4 @@
+{
+  "using": "xpath",
+  "value": ".//a[contains(., \"Resource center\") and not(.//a)]"
+}
