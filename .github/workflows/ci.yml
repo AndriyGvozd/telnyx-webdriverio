@@ -1,0 +1,139 @@
+name: E2E tests + Allure report
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  # Chrome + Firefox run inside Docker against the official
+  # selenium/standalone-* images (see docker-compose.yml) - GitHub's
+  # ubuntu runners are amd64, so no emulation needed here (unlike an
+  # Apple Silicon Mac locally).
+  docker-tests:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        browser: [chrome, firefox]
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Build tests image
+        run: docker compose build
+
+      - name: Run ${{ matrix.browser }} suite
+        run: |
+          docker compose up -d selenium-${{ matrix.browser }}
+          docker compose run --rm -e SELENIUM_HOST=selenium-${{ matrix.browser }} tests npm run test:${{ matrix.browser }}
+
+      - name: Upload Allure results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: allure-results-${{ matrix.browser }}
+          path: allure-results
+
+  mobile-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Build tests image
+        run: docker compose build
+
+      - name: Run mobile suite
+        run: |
+          docker compose up -d selenium-chrome
+          docker compose run --rm -e SELENIUM_HOST=selenium-chrome tests npm run test:mobile
+
+      - name: Upload Allure results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: allure-results-mobile
+          path: allure-results
+
+  # Optional per the assignment - allowed to fail without blocking the
+  # pipeline (Edge coverage is a bonus, not a requirement).
+  edge-tests:
+    runs-on: ubuntu-latest
+    continue-on-error: true
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Build tests image
+        run: docker compose build
+
+      - name: Run Edge suite
+        run: |
+          docker compose up -d selenium-edge
+          docker compose run --rm -e SELENIUM_HOST=selenium-edge tests npm run test:edge
+
+      - name: Upload Allure results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: allure-results-edge
+          path: allure-results
+
+  # Safari cannot run in Docker at all (no Linux build exists) - it runs
+  # natively on a macOS runner instead, same as it would locally.
+  safari-tests:
+    runs-on: macos-latest
+    continue-on-error: true
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - run: npm ci
+
+      - name: Enable Safari WebDriver
+        run: sudo safaridriver --enable
+
+      - run: npm run test:safari
+
+      - name: Upload Allure results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: allure-results-safari
+          path: allure-results
+
+  # Combines every browser's results into one Allure report and publishes
+  # it to GitHub Pages - runs even if some browser jobs above failed, so a
+  # red run is still visible in the report instead of disappearing.
+  deploy-report:
+    needs: [docker-tests, mobile-tests, edge-tests, safari-tests]
+    if: always()
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - run: npm ci
+
+      - name: Download all Allure results
+        uses: actions/download-artifact@v4
+        with:
+          pattern: allure-results-*
+          path: allure-results-merged
+          merge-multiple: true
+
+      - name: Generate Allure report
+        run: npx allure generate allure-results-merged --clean -o allure-report
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./allure-report
