@@ -29,9 +29,6 @@
     "test:safari": "cross-env TEST_ENV=prod wdio run ./config/wdio.safari.conf.ts",
     "test:safari:staging": "cross-env TEST_ENV=staging wdio run ./config/wdio.safari.conf.ts",
     "test:safari:dev": "cross-env TEST_ENV=dev wdio run ./config/wdio.safari.conf.ts",
-    "test:edge": "cross-env TEST_ENV=prod wdio run ./config/wdio.edge.conf.ts",
-    "test:edge:staging": "cross-env TEST_ENV=staging wdio run ./config/wdio.edge.conf.ts",
-    "test:edge:dev": "cross-env TEST_ENV=dev wdio run ./config/wdio.edge.conf.ts",
     "test:mobile": "cross-env TEST_ENV=prod wdio run ./config/wdio.mobile.conf.ts",
     "test:mobile:staging": "cross-env TEST_ENV=staging wdio run ./config/wdio.mobile.conf.ts",
     "test:mobile:dev": "cross-env TEST_ENV=dev wdio run ./config/wdio.mobile.conf.ts",
@@ -43,7 +40,6 @@
     "docker:test:chrome": "docker compose run --rm -e SELENIUM_HOST=selenium-chrome tests npm run test:chrome",
     "docker:test:firefox": "docker compose run --rm -e SELENIUM_HOST=selenium-firefox tests npm run test:firefox",
     "docker:test:mobile": "docker compose run --rm -e SELENIUM_HOST=selenium-chrome tests npm run test:mobile",
-    "docker:test:edge": "docker compose up -d selenium-edge && docker compose run --rm -e SELENIUM_HOST=selenium-edge tests npm run test:edge",
     "docker:down": "docker compose down"
   }
 }

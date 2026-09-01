@@ -15,23 +15,11 @@ services:
     ports:
       - '4445:4444'
 
-  # Optional, same as npm run test:edge locally - Edge is Chromium-based
-  # like Chrome, kept as its own container so it can be skipped freely.
-  selenium-edge:
-    image: selenium/standalone-edge:latest
-    platform: linux/amd64
-    shm_size: 2gb
-    ports:
-      - '4446:4444'
-
   tests:
     build: .
     depends_on:
       - selenium-chrome
       - selenium-firefox
-    # selenium-edge isn't listed here on purpose (it's optional) - the
-    # docker:test:edge script starts it explicitly instead of every run
-    # paying to spin up a browser most runs don't need.
     environment:
       - TEST_ENV=prod
     volumes:

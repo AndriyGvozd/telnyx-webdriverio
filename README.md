@@ -30,7 +30,6 @@
 │   ├── wdio.chrome.conf.ts
 │   ├── wdio.firefox.conf.ts
 │   ├── wdio.safari.conf.ts
-│   ├── wdio.edge.conf.ts          # опційний браузер
 │   └── wdio.mobile.conf.ts        # мобільна емуляція (375x812) через Chrome
 │
 ├── test/
@@ -77,7 +76,6 @@ npm run test:chrome      # весь desktop-набір на Chrome
 npm run test:firefox     # весь desktop-набір на Firefox
 npm run test:safari      # весь desktop-набір на Safari (лише macOS)
 npm run test:mobile      # мобільний набір (TC-10, TC-30)
-npm run test:edge        # опційно, якщо встановлений Microsoft Edge
 
 npm test                 # усі браузери послідовно (chrome → firefox → safari → mobile)
 ```
@@ -105,7 +103,6 @@ npx wdio run ./config/wdio.chrome.conf.ts --spec ./test/specs/desktop/economics.
 | Chrome | `npm run test:chrome` | основний |
 | Firefox | `npm run test:firefox` | |
 | Safari | `npm run test:safari` | лише macOS, вимагає одноразового `safaridriver --enable` |
-| Edge | `npm run test:edge` | опційний за ТЗ |
 | Mobile | `npm run test:mobile` | Chrome + мобільна емуляція 375×812 |
 
 ---
@@ -140,7 +137,7 @@ npm run report             # generate + open за один виклик
 
 ## Docker
 
-Тести можна запускати повністю в контейнерах — браузери не потрібно встановлювати на хост-машину взагалі. Використовуються офіційні образи `selenium/standalone-chrome/firefox/edge`, а сам проєкт підключається до них як звичайний WebDriver-клієнт.
+Тести можна запускати повністю в контейнерах — браузери не потрібно встановлювати на хост-машину взагалі. Використовуються офіційні образи `selenium/standalone-chrome/firefox`, а сам проєкт підключається до них як звичайний WebDriver-клієнт.
 
 **Передумова:** встановлений і запущений [Docker Desktop](https://www.docker.com/products/docker-desktop/).
 
@@ -148,7 +145,6 @@ npm run report             # generate + open за один виклик
 npm run docker:test:chrome
 npm run docker:test:firefox
 npm run docker:test:mobile
-npm run docker:test:edge      # опційно
 npm run docker:down           # прибрати контейнери після роботи
 ```
 
@@ -180,9 +176,8 @@ docker compose run tests npm run test:chrome
 **Джоби:**
 1. **`docker-tests`** (матриця Chrome/Firefox) — збирає Docker-образ і ганяє тести в контейнерах на звичайному Ubuntu-раннері.
 2. **`mobile-tests`** — той самий підхід для мобільного набору.
-3. **`edge-tests`** — опційний, `continue-on-error: true` (падіння тут не зупиняє весь пайплайн).
-4. **`safari-tests`** — окремо, на `macos-latest` раннері, **без Docker** (нативний запуск, бо Safari в контейнері неможливий).
-5. **`deploy-report`** — збирає результати з усіх джобів (навіть якщо якийсь впав), генерує єдиний Allure-звіт і публікує його на **GitHub Pages**.
+3. **`safari-tests`** — окремо, на `macos-latest` раннері, **без Docker** (нативний запуск, бо Safari в контейнері неможливий).
+4. **`deploy-report`** — збирає результати з усіх джобів (навіть якщо якийсь впав), генерує єдиний Allure-звіт і публікує його на **GitHub Pages**.
 
 Готовий звіт з останнього прогону буде доступний за адресою:
 ```
@@ -207,5 +202,4 @@ https://<твій-github-username>.github.io/<назва-репозиторію>
 ## Відомі обмеження
 
 - **Safari** не можна запустити в Docker — лише нативно на macOS (локально чи на `macos-latest` GitHub-раннері).
-- **Edge на Apple Silicon (arm64)** у Docker працює через емуляцію amd64 (Rosetta/QEMU) — офіційний образ `selenium/standalone-edge` не публікується для arm64. Працює коректно, але помітно повільніше. На GitHub Actions (amd64-раннери) емуляція не потрібна.
 - `staging`/`dev` середовища в `test/env/environments.ts` — технічно робочі, але вказують на URL-заглушки, оскільки в Telnyx немає публічних non-prod оточень.

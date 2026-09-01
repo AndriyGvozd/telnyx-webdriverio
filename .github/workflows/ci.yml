@@ -57,29 +57,6 @@ jobs:
           name: allure-results-mobile
           path: allure-results
 
-  # Optional per the assignment - allowed to fail without blocking the
-  # pipeline (Edge coverage is a bonus, not a requirement).
-  edge-tests:
-    runs-on: ubuntu-latest
-    continue-on-error: true
-    steps:
-      - uses: actions/checkout@v4
-
-      - name: Build tests image
-        run: docker compose build
-
-      - name: Run Edge suite
-        run: |
-          docker compose up -d selenium-edge
-          docker compose run --rm -e SELENIUM_HOST=selenium-edge tests npm run test:edge
-
-      - name: Upload Allure results
-        if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: allure-results-edge
-          path: allure-results
-
   # Safari cannot run in Docker at all (no Linux build exists) - it runs
   # natively on a macOS runner instead, same as it would locally.
   safari-tests:
@@ -110,7 +87,7 @@ jobs:
   # it to GitHub Pages - runs even if some browser jobs above failed, so a
   # red run is still visible in the report instead of disappearing.
   deploy-report:
-    needs: [docker-tests, mobile-tests, edge-tests, safari-tests]
+    needs: [docker-tests, mobile-tests, safari-tests]
     if: always()
     runs-on: ubuntu-latest
     steps:
