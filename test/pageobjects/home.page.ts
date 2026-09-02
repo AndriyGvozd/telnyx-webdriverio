@@ -14,19 +14,19 @@ class HomePage extends Page {
     }
 
     public get humanTab() {
-        return this.heroSection.$('a=Human');
+        return this.heroSection.$('a[href="/"]');
     }
 
     public get machineTab() {
-        return this.heroSection.$('a=Machine');
+        return this.heroSection.$('a[href="/machine"]');
     }
 
     public get composeYourStackButton() {
-        return this.heroSection.$('a=COMPOSE YOUR STACK');
+        return this.heroSection.$('a[href="#price-your-workload"]');
     }
 
     public get heroGetStartedButton() {
-        return this.heroSection.$('a=GET STARTED');
+        return this.heroSection.$('a[href="/sign-up"]');
     }
 
     /** "ONE AGENT, EVERY CHANNEL" badges (Voice / SMS/MMS / WhatsApp / Email / RCS). */
@@ -86,7 +86,7 @@ class HomePage extends Page {
 
     // ---- Build section ------------------------------------------------
     public get readTheDocsButton() {
-        return $('a=READ THE DOCS');
+        return $('a[href="https://developers.telnyx.com"]');
     }
 
     public get githubLink() {

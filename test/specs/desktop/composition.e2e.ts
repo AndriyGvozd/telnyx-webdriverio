@@ -1,4 +1,4 @@
-import { expect, browser } from '@wdio/globals';
+import { expect } from '@wdio/globals';
 import HomePage from '../../pageobjects/home.page.js';
 import { jsClick } from '../../support/elementUtils.js';
 
@@ -19,10 +19,7 @@ describe('Composition section (50 primitives)', () => {
         const contactCenter = await HomePage.useCaseButton('Contact center');
         await jsClick(contactCenter);
 
-        await browser.waitUntil(async () => {
-            const after = await HomePage.resultValue('Primitives composed').then((el) => el.getText());
-            return after !== before;
-        });
+        await expect(await HomePage.resultValue('Primitives composed')).not.toHaveText(before);
 
         await expect(await HomePage.curlSnippet).toBeDisplayed();
         await expect(await HomePage.resultValue('Est. latency budget')).toBeDisplayed();

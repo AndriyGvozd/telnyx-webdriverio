@@ -12,29 +12,38 @@ import type { ChainablePromiseElement } from 'webdriverio';
  * must `await` this before chaining element commands.
  */
 export async function firstDisplayed(selector: string): Promise<WebdriverIO.Element> {
-    let elements: WebdriverIO.Element[] = [];
+    let displayedElement: WebdriverIO.Element | undefined;
 
-    // Right after a fresh page load the matching nodes may not have
-    // rendered yet (seen on Firefox) - a single one-shot query can catch
-    // that empty window and return `undefined`. Retry until at least one
-    // match shows up instead of assuming the first attempt is authoritative.
+    // Right after a fresh page load the matching nodes may not exist yet
+    // (seen on Firefox), or may exist but not be visible yet (e.g. a
+    // transition still running on one of the responsive-breakpoint
+    // duplicates). Keep re-querying and re-checking visibility until one
+    // is actually displayed, instead of only checking once.
     await browser.waitUntil(
         async () => {
             // `$$()`'s chainable typing doesn't narrow to a plain array on
             // await; it does resolve to one at runtime, so this cast
             // reflects that.
-            elements = (await $$(selector)) as unknown as WebdriverIO.Element[];
-            return elements.length > 0;
+            const elements = (await $$(selector)) as unknown as WebdriverIO.Element[];
+            for (const element of elements) {
+                if (await element.isDisplayed()) {
+                    displayedElement = element;
+                    return true;
+                }
+            }
+            return false;
         },
-        { timeoutMsg: `No elements matched selector "${selector}"` }
+        { timeoutMsg: `No displayed element found for selector "${selector}"` }
     );
 
-    for (const element of elements) {
-        if (await element.isDisplayed()) {
-            return element;
-        }
+    if (!displayedElement) {
+        // Unreachable in practice - waitUntil throws its own timeout error
+        // above first - but keeps this honest for TypeScript and for
+        // anyone reading the function in isolation.
+        throw new Error(`No displayed element found for selector "${selector}"`);
     }
-    return elements[0];
+
+    return displayedElement;
 }
 
 /**

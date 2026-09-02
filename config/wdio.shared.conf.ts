@@ -24,7 +24,6 @@ export const sharedConfig: Partial<WebdriverIO.Config> = {
     connectionRetryTimeout: 120000,
     connectionRetryCount: 3,
 
-    services: ['visual'],
     framework: 'mocha',
 
     // 'spec' prints live progress to the terminal; 'allure' writes raw

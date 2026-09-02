@@ -17,7 +17,7 @@ describe('Header', () => {
         await Header.logo.click();
 
         const homeUrl = `${getEnvironment().baseUrl}/`;
-        await browser.waitUntil(async () => (await browser.getUrl()) === homeUrl);
+        await expect(browser).toHaveUrl(homeUrl);
         await expect(HomePage.heroSection).toBeDisplayed();
     });
 

@@ -26,7 +26,7 @@ describe('Hero section', () => {
         // interactability check and works identically on every browser.
         await jsClick(await HomePage.composeYourStackButton);
 
-        await browser.waitUntil(async () => (await browser.getUrl()).includes('#price-your-workload'));
+        await expect(browser).toHaveUrl(expect.stringContaining('#price-your-workload'));
         await expect($('#price-your-workload')).toBeDisplayedInViewport();
     });
 
