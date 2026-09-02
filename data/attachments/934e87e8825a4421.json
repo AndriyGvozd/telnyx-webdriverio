@@ -1,0 +1,326 @@
+[
+  {
+    "level": "INFO",
+    "message": "console-api 1033:238 \"Launching Mapper instance with selfTargetId:\" \"85AC4AF3B9AD6527C6C9F5437AF66FAC\"",
+    "source": "console-api",
+    "timestamp": 1788353408378
+  },
+  {
+    "level": "DEBUG",
+    "message": "console-api 26:12 \"[WDIO]\" \"newShadowRoot\" next-route-announcer next-route-announcer false html.inter_b66e4c26-module__CLdjSG__variable.ppformulafont_d2eb59c4-module__cbmm4G__variable.notosansarabic_a437aae4-module__MQQ8VW__variable.scroll-smooth",
+    "source": "console-api",
+    "timestamp": 1788353410078
+  },
+  {
+    "level": "DEBUG",
+    "message": "console-api 26:12 \"[WDIO]\" \"newShadowRoot\" next-route-announcer next-route-announcer false html.inter_b66e4c26-module__CLdjSG__variable.ppformulafont_d2eb59c4-module__cbmm4G__variable.notosansarabic_a437aae4-module__MQQ8VW__variable.scroll-smooth",
+    "source": "console-api",
+    "timestamp": 1788353411636
+  },
+  {
+    "level": "INFO",
+    "message": "https://dila2qpfw3s64.cloudfront.net/_next/static/chunks/2no8iagyl3ao9.js?dpl=cc3be86 10:281325 \"[Prism SDK] v0.5.8 initialized (project: prj_website_prod, session: prism-1788353411285-ooqlsm9z-khmc)\"",
+    "source": "console-api",
+    "timestamp": 1788353412131
+  },
+  {
+    "level": "INFO",
+    "message": "https://dila2qpfw3s64.cloudfront.net/_next/static/chunks/2no8iagyl3ao9.js?dpl=cc3be86 10:281325 \"[Prism SDK] Initialized with project:\" \"prj_website_prod\"",
+    "source": "console-api",
+    "timestamp": 1788353412131
+  },
+  {
+    "level": "SEVERE",
+    "message": "https://cdn.cookielaw.org/scripttemplates/202605.1.0/otBannerSdk.js 6:558998 Uncaught TypeError: Cannot read properties of undefined (reading 'TenantFeatures')",
+    "source": "javascript",
+    "timestamp": 1788353413089
+  },
+  {
+    "level": "INFO",
+    "message": "https://dila2qpfw3s64.cloudfront.net/_next/static/chunks/2no8iagyl3ao9.js?dpl=cc3be86 10:281325 \"SpeedCurve RUM error 200: The SpeedCurve account linked to the `id` parameter is not active.\"",
+    "source": "console-api",
+    "timestamp": 1788353413356
+  },
+  {
+    "level": "DEBUG",
+    "message": "https://dila2qpfw3s64.cloudfront.net/_next/static/chunks/2no8iagyl3ao9.js?dpl=cc3be86 10:281325 \"[bugsnag]\" \"Loaded!\"",
+    "source": "console-api",
+    "timestamp": 1788353414132
+  },
+  {
+    "level": "WARNING",
+    "message": "https://dila2qpfw3s64.cloudfront.net/_next/static/chunks/2no8iagyl3ao9.js?dpl=cc3be86 10:281325 \"[Prism] Unload flush capped to 2/3 events to fit keepalive budget; 1 trailing events deferred (restored to buffer if page stays alive, lost on actual unload pending Tranche 2 SDK persistence)\"",
+    "source": "console-api",
+    "timestamp": 1788353414453
+  },
+  {
+    "level": "DEBUG",
+    "message": "console-api 26:12 \"[WDIO]\" \"newShadowRoot\" next-route-announcer next-route-announcer false html.inter_b66e4c26-module__CLdjSG__variable.ppformulafont_d2eb59c4-module__cbmm4G__variable.notosansarabic_a437aae4-module__MQQ8VW__variable.scroll-smooth",
+    "source": "console-api",
+    "timestamp": 1788353414783
+  },
+  {
+    "level": "INFO",
+    "message": "https://dila2qpfw3s64.cloudfront.net/_next/static/chunks/2no8iagyl3ao9.js?dpl=cc3be86 10:281325 \"[Prism SDK] v0.5.8 initialized (project: prj_website_prod, session: prism-1788353411285-ooqlsm9z-khmc)\"",
+    "source": "console-api",
+    "timestamp": 1788353415322
+  },
+  {
+    "level": "INFO",
+    "message": "https://dila2qpfw3s64.cloudfront.net/_next/static/chunks/2no8iagyl3ao9.js?dpl=cc3be86 10:281325 \"[Prism SDK] Initialized with project:\" \"prj_website_prod\"",
+    "source": "console-api",
+    "timestamp": 1788353415331
+  },
+  {
+    "level": "SEVERE",
+    "message": "https://cdn.cookielaw.org/scripttemplates/202605.1.0/otBannerSdk.js 6:558998 Uncaught TypeError: Cannot read properties of undefined (reading 'TenantFeatures')",
+    "source": "javascript",
+    "timestamp": 1788353415791
+  },
+  {
+    "level": "INFO",
+    "message": "https://dila2qpfw3s64.cloudfront.net/_next/static/chunks/2no8iagyl3ao9.js?dpl=cc3be86 10:281325 \"SpeedCurve RUM error 200: The SpeedCurve account linked to the `id` parameter is not active.\"",
+    "source": "console-api",
+    "timestamp": 1788353415923
+  },
+  {
+    "level": "DEBUG",
+    "message": "https://dila2qpfw3s64.cloudfront.net/_next/static/chunks/2no8iagyl3ao9.js?dpl=cc3be86 10:281325 \"[bugsnag]\" \"Loaded!\"",
+    "source": "console-api",
+    "timestamp": 1788353416095
+  },
+  {
+    "level": "DEBUG",
+    "message": "https://dila2qpfw3s64.cloudfront.net/_next/static/chunks/2no8iagyl3ao9.js?dpl=cc3be86 10:281325 \"[WDIO]\" \"newShadowRoot\" div #document true html.inter_b66e4c26-module__CLdjSG__variable.ppformulafont_d2eb59c4-module__cbmm4G__variable.notosansarabic_a437aae4-module__MQQ8VW__variable.scroll-smooth",
+    "source": "console-api",
+    "timestamp": 1788353416908
+  },
+  {
+    "level": "WARNING",
+    "message": "https://dila2qpfw3s64.cloudfront.net/_next/static/chunks/2no8iagyl3ao9.js?dpl=cc3be86 10:281325 \"[Prism] Unload flush capped to 3/4 events to fit keepalive budget; 1 trailing events deferred (restored to buffer if page stays alive, lost on actual unload pending Tranche 2 SDK persistence)\"",
+    "source": "console-api",
+    "timestamp": 1788353417770
+  },
+  {
+    "level": "DEBUG",
+    "message": "console-api 26:12 \"[WDIO]\" \"newShadowRoot\" next-route-announcer next-route-announcer false html.inter_b66e4c26-module__CLdjSG__variable.ppformulafont_d2eb59c4-module__cbmm4G__variable.notosansarabic_a437aae4-module__MQQ8VW__variable.scroll-smooth",
+    "source": "console-api",
+    "timestamp": 1788353418250
+  },
+  {
+    "level": "DEBUG",
+    "message": "console-api 26:12 \"[WDIO]\" \"newShadowRoot\" next-route-announcer next-route-announcer false html.inter_b66e4c26-module__CLdjSG__variable.ppformulafont_d2eb59c4-module__cbmm4G__variable.notosansarabic_a437aae4-module__MQQ8VW__variable.scroll-smooth",
+    "source": "console-api",
+    "timestamp": 1788353418744
+  },
+  {
+    "level": "INFO",
+    "message": "https://dila2qpfw3s64.cloudfront.net/_next/static/chunks/2no8iagyl3ao9.js?dpl=cc3be86 10:281325 \"[Prism SDK] v0.5.8 initialized (project: prj_website_prod, session: prism-1788353411285-ooqlsm9z-khmc)\"",
+    "source": "console-api",
+    "timestamp": 1788353419302
+  },
+  {
+    "level": "INFO",
+    "message": "https://dila2qpfw3s64.cloudfront.net/_next/static/chunks/2no8iagyl3ao9.js?dpl=cc3be86 10:281325 \"[Prism SDK] Initialized with project:\" \"prj_website_prod\"",
+    "source": "console-api",
+    "timestamp": 1788353419303
+  },
+  {
+    "level": "SEVERE",
+    "message": "https://cdn.cookielaw.org/scripttemplates/202605.1.0/otBannerSdk.js 6:558998 Uncaught TypeError: Cannot read properties of undefined (reading 'TenantFeatures')",
+    "source": "javascript",
+    "timestamp": 1788353419534
+  },
+  {
+    "level": "WARNING",
+    "message": "https://dila2qpfw3s64.cloudfront.net/_next/static/chunks/2no8iagyl3ao9.js?dpl=cc3be86 10:281325 \"[Prism] Unload flush capped to 23/25 events to fit keepalive budget; 2 trailing events deferred (restored to buffer if page stays alive, lost on actual unload pending Tranche 2 SDK persistence)\"",
+    "source": "console-api",
+    "timestamp": 1788353419804
+  },
+  {
+    "level": "SEVERE",
+    "message": "https://telnyx.com/sign-up 103 Access to script at 'https://dila2qpfw3s64.cloudfront.net/_next/static/chunks/2r6zvh297temc.js?dpl=cc3be86' from origin 'https://telnyx.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.",
+    "source": "javascript",
+    "timestamp": 1788353419999
+  },
+  {
+    "level": "SEVERE",
+    "message": "https://dila2qpfw3s64.cloudfront.net/_next/static/chunks/2r6zvh297temc.js?dpl=cc3be86 - Failed to load resource: net::ERR_FAILED",
+    "source": "network",
+    "timestamp": 1788353419999
+  },
+  {
+    "level": "SEVERE",
+    "message": "https://telnyx.com/sign-up 103 Access to script at 'https://dila2qpfw3s64.cloudfront.net/_next/static/chunks/0fa70ujwjfit2.js?dpl=cc3be86' from origin 'https://telnyx.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.",
+    "source": "javascript",
+    "timestamp": 1788353419999
+  },
+  {
+    "level": "SEVERE",
+    "message": "https://dila2qpfw3s64.cloudfront.net/_next/static/chunks/0fa70ujwjfit2.js?dpl=cc3be86 - Failed to load resource: net::ERR_FAILED",
+    "source": "network",
+    "timestamp": 1788353419999
+  },
+  {
+    "level": "SEVERE",
+    "message": "https://telnyx.com/sign-up - Access to script at 'https://dila2qpfw3s64.cloudfront.net/_next/static/chunks/3gtv9o61te61q.js?dpl=cc3be86' from origin 'https://telnyx.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.",
+    "source": "javascript",
+    "timestamp": 1788353420019
+  },
+  {
+    "level": "SEVERE",
+    "message": "https://dila2qpfw3s64.cloudfront.net/_next/static/chunks/3gtv9o61te61q.js?dpl=cc3be86 - Failed to load resource: net::ERR_FAILED",
+    "source": "network",
+    "timestamp": 1788353420019
+  },
+  {
+    "level": "SEVERE",
+    "message": "https://telnyx.com/sign-up - Access to script at 'https://dila2qpfw3s64.cloudfront.net/_next/static/chunks/3ksfrk_7wuoeb.js?dpl=cc3be86' from origin 'https://telnyx.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.",
+    "source": "javascript",
+    "timestamp": 1788353420019
+  },
+  {
+    "level": "SEVERE",
+    "message": "https://dila2qpfw3s64.cloudfront.net/_next/static/chunks/3ksfrk_7wuoeb.js?dpl=cc3be86 - Failed to load resource: net::ERR_FAILED",
+    "source": "network",
+    "timestamp": 1788353420019
+  },
+  {
+    "level": "DEBUG",
+    "message": "console-api 26:12 \"[WDIO]\" \"newShadowRoot\" next-route-announcer next-route-announcer false html.inter_b66e4c26-module__CLdjSG__variable.ppformulafont_d2eb59c4-module__cbmm4G__variable.notosansarabic_a437aae4-module__MQQ8VW__variable.scroll-smooth",
+    "source": "console-api",
+    "timestamp": 1788353420535
+  },
+  {
+    "level": "INFO",
+    "message": "https://dila2qpfw3s64.cloudfront.net/_next/static/chunks/2no8iagyl3ao9.js?dpl=cc3be86 10:281325 \"[Prism SDK] v0.5.8 initialized (project: prj_website_prod, session: prism-1788353411285-ooqlsm9z-khmc)\"",
+    "source": "console-api",
+    "timestamp": 1788353421276
+  },
+  {
+    "level": "INFO",
+    "message": "https://dila2qpfw3s64.cloudfront.net/_next/static/chunks/2no8iagyl3ao9.js?dpl=cc3be86 10:281325 \"[Prism SDK] Initialized with project:\" \"prj_website_prod\"",
+    "source": "console-api",
+    "timestamp": 1788353421276
+  },
+  {
+    "level": "SEVERE",
+    "message": "https://cdn.cookielaw.org/scripttemplates/202605.1.0/otBannerSdk.js 6:558998 Uncaught TypeError: Cannot read properties of undefined (reading 'TenantFeatures')",
+    "source": "javascript",
+    "timestamp": 1788353421528
+  },
+  {
+    "level": "WARNING",
+    "message": "https://dila2qpfw3s64.cloudfront.net/_next/static/chunks/2no8iagyl3ao9.js?dpl=cc3be86 10:281325 \"[Prism] Unload flush capped to 16/22 events to fit keepalive budget; 6 trailing events deferred (restored to buffer if page stays alive, lost on actual unload pending Tranche 2 SDK persistence)\"",
+    "source": "console-api",
+    "timestamp": 1788353421747
+  },
+  {
+    "level": "DEBUG",
+    "message": "console-api 26:12 \"[WDIO]\" \"newShadowRoot\" next-route-announcer next-route-announcer false html.inter_b66e4c26-module__CLdjSG__variable.ppformulafont_d2eb59c4-module__cbmm4G__variable.notosansarabic_a437aae4-module__MQQ8VW__variable.scroll-smooth",
+    "source": "console-api",
+    "timestamp": 1788353422110
+  },
+  {
+    "level": "DEBUG",
+    "message": "console-api 26:12 \"[WDIO]\" \"newShadowRoot\" next-route-announcer next-route-announcer false html.inter_b66e4c26-module__CLdjSG__variable.ppformulafont_d2eb59c4-module__cbmm4G__variable.notosansarabic_a437aae4-module__MQQ8VW__variable.scroll-smooth",
+    "source": "console-api",
+    "timestamp": 1788353422467
+  },
+  {
+    "level": "INFO",
+    "message": "https://dila2qpfw3s64.cloudfront.net/_next/static/chunks/2no8iagyl3ao9.js?dpl=cc3be86 10:281325 \"[Prism SDK] v0.5.8 initialized (project: prj_website_prod, session: prism-1788353411285-ooqlsm9z-khmc)\"",
+    "source": "console-api",
+    "timestamp": 1788353423011
+  },
+  {
+    "level": "INFO",
+    "message": "https://dila2qpfw3s64.cloudfront.net/_next/static/chunks/2no8iagyl3ao9.js?dpl=cc3be86 10:281325 \"[Prism SDK] Initialized with project:\" \"prj_website_prod\"",
+    "source": "console-api",
+    "timestamp": 1788353423011
+  },
+  {
+    "level": "SEVERE",
+    "message": "https://cdn.cookielaw.org/scripttemplates/202605.1.0/otBannerSdk.js 6:558998 Uncaught TypeError: Cannot read properties of undefined (reading 'TenantFeatures')",
+    "source": "javascript",
+    "timestamp": 1788353423254
+  },
+  {
+    "level": "INFO",
+    "message": "https://dila2qpfw3s64.cloudfront.net/_next/static/chunks/2no8iagyl3ao9.js?dpl=cc3be86 10:281325 \"SpeedCurve RUM error 200: The SpeedCurve account linked to the `id` parameter is not active.\"",
+    "source": "console-api",
+    "timestamp": 1788353423312
+  },
+  {
+    "level": "DEBUG",
+    "message": "https://dila2qpfw3s64.cloudfront.net/_next/static/chunks/2no8iagyl3ao9.js?dpl=cc3be86 10:281325 \"[bugsnag]\" \"Loaded!\"",
+    "source": "console-api",
+    "timestamp": 1788353423395
+  },
+  {
+    "level": "DEBUG",
+    "message": "https://dila2qpfw3s64.cloudfront.net/_next/static/chunks/2no8iagyl3ao9.js?dpl=cc3be86 10:281325 \"[WDIO]\" \"newShadowRoot\" div #document true html.inter_b66e4c26-module__CLdjSG__variable.ppformulafont_d2eb59c4-module__cbmm4G__variable.notosansarabic_a437aae4-module__MQQ8VW__variable.scroll-smooth",
+    "source": "console-api",
+    "timestamp": 1788353424301
+  },
+  {
+    "level": "WARNING",
+    "message": "https://dila2qpfw3s64.cloudfront.net/_next/static/chunks/2no8iagyl3ao9.js?dpl=cc3be86 10:281325 \"[Prism] Unload flush capped to 16/168 events to fit keepalive budget; 152 trailing events deferred (restored to buffer if page stays alive, lost on actual unload pending Tranche 2 SDK persistence)\"",
+    "source": "console-api",
+    "timestamp": 1788353425411
+  },
+  {
+    "level": "DEBUG",
+    "message": "console-api 26:12 \"[WDIO]\" \"newShadowRoot\" next-route-announcer next-route-announcer false html.inter_b66e4c26-module__CLdjSG__variable.ppformulafont_d2eb59c4-module__cbmm4G__variable.notosansarabic_a437aae4-module__MQQ8VW__variable.scroll-smooth",
+    "source": "console-api",
+    "timestamp": 1788353425837
+  },
+  {
+    "level": "INFO",
+    "message": "https://dila2qpfw3s64.cloudfront.net/_next/static/chunks/2no8iagyl3ao9.js?dpl=cc3be86 10:281325 \"[Prism SDK] v0.5.8 initialized (project: prj_website_prod, session: prism-1788353411285-ooqlsm9z-khmc)\"",
+    "source": "console-api",
+    "timestamp": 1788353426367
+  },
+  {
+    "level": "INFO",
+    "message": "https://dila2qpfw3s64.cloudfront.net/_next/static/chunks/2no8iagyl3ao9.js?dpl=cc3be86 10:281325 \"[Prism SDK] Initialized with project:\" \"prj_website_prod\"",
+    "source": "console-api",
+    "timestamp": 1788353426368
+  },
+  {
+    "level": "SEVERE",
+    "message": "https://cdn.cookielaw.org/scripttemplates/202605.1.0/otBannerSdk.js 6:558998 Uncaught TypeError: Cannot read properties of undefined (reading 'TenantFeatures')",
+    "source": "javascript",
+    "timestamp": 1788353426765
+  },
+  {
+    "level": "SEVERE",
+    "message": "https://telnyx.com/solutions?_rsc=RTqY04CYue_g8ILu - Failed to load resource: the server responded with a status of 404 ()",
+    "source": "network",
+    "timestamp": 1788353427380
+  },
+  {
+    "level": "INFO",
+    "message": "https://dila2qpfw3s64.cloudfront.net/_next/static/chunks/2no8iagyl3ao9.js?dpl=cc3be86 10:281325 \"SpeedCurve RUM error 200: The SpeedCurve account linked to the `id` parameter is not active.\"",
+    "source": "console-api",
+    "timestamp": 1788353427442
+  },
+  {
+    "level": "DEBUG",
+    "message": "https://dila2qpfw3s64.cloudfront.net/_next/static/chunks/2no8iagyl3ao9.js?dpl=cc3be86 10:281325 \"[bugsnag]\" \"Loaded!\"",
+    "source": "console-api",
+    "timestamp": 1788353427597
+  },
+  {
+    "level": "DEBUG",
+    "message": "https://dila2qpfw3s64.cloudfront.net/_next/static/chunks/2no8iagyl3ao9.js?dpl=cc3be86 10:281325 \"[WDIO]\" \"newShadowRoot\" div #document true html.inter_b66e4c26-module__CLdjSG__variable.ppformulafont_d2eb59c4-module__cbmm4G__variable.notosansarabic_a437aae4-module__MQQ8VW__variable.scroll-smooth",
+    "source": "console-api",
+    "timestamp": 1788353427921
+  },
+  {
+    "level": "WARNING",
+    "message": "https://dila2qpfw3s64.cloudfront.net/_next/static/chunks/2no8iagyl3ao9.js?dpl=cc3be86 10:281325 \"[Prism] Unload flush capped to 17/85 events to fit keepalive budget; 68 trailing events deferred (restored to buffer if page stays alive, lost on actual unload pending Tranche 2 SDK persistence)\"",
+    "source": "console-api",
+    "timestamp": 1788353428517
+  }
+]

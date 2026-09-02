@@ -1,1 +1,0 @@
-stale element reference: WebDriverError: A node reference could not be resolved: Node with identifier 'node-2D07DA21-8FFA-4DFA-82D0-575CB8F29B63' was not found when running "http://localhost:49243/session/D8A78024-FF5E-4A2A-8F1C-AD5A3F5CA280/element/node-2D07DA21-8FFA-4DFA-82D0-575CB8F29B63/attribute/aria-controls" with method "GET"

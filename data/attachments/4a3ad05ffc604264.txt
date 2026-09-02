@@ -1,1 +1,0 @@
-stale element reference: WebDriverError: A node reference could not be resolved: Node with identifier 'node-0EF663EA-0D2E-4026-A9E9-5F87F993DBDB' was not found when running "http://localhost:49243/session/D8A78024-FF5E-4A2A-8F1C-AD5A3F5CA280/execute/sync" with method "POST"
